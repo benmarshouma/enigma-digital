@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Engima Digital</title>
+    <meta name="description" content="See selected Engima Digital projects showcasing strategy, digital experiences, and brand growth work for ambitious businesses." />
+    <style>
+         :root {
+            --bg: #0b1020;
+            --bg-soft: #121b2d;
+            --card: #101827;
+            --text: #eef4ff;
+            --muted: #9bb0d1;
+            --primary: #7c9cff;
+            --primary-strong: #5a7dff;
+            --accent: #7ef0d1;
+            --shadow: rgba(9, 15, 29, 0.5);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, rgba(124, 156, 255, 0.18), transparent 24%), linear-gradient(135deg, var(--bg), #060b14 42%, #0a1427);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(9, 15, 29, 0.62);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 76px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .brand-mark {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            box-shadow: 0 0 18px rgba(126, 240, 209, 0.7);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        
+        .nav-cta {
+            padding: 12px 18px;
+            border: 1px solid rgba(124, 156, 255, 0.5);
+            background: rgba(124, 156, 255, 0.08);
+            border-radius: 999px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .hero {
+            padding: 82px 0 18px;
+        }
+        
+        .hero-inner {
+            max-width: 780px;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(124, 156, 255, 0.1);
+            border: 1px solid rgba(124, 156, 255, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            margin: 18px 0 20px;
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.96;
+            letter-spacing: -0.06em;
+        }
+        
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+        
+        .projects {
+            padding: 42px 0 68px;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+        
+        .project-card {
+            background: rgba(16, 24, 39, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(7, 11, 18, 0.25);
+        }
+        
+        .project-visual {
+            min-height: 220px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(124, 156, 255, 0.18), rgba(126, 240, 209, 0.12)), #111b2d;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(238, 244, 255, 0.9);
+        }
+        
+        .project-content {
+            padding: 24px 22px 26px;
+        }
+        
+        .meta {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+        }
+        
+        .project-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.6rem;
+            letter-spacing: -0.04em;
+        }
+        
+        .project-card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+        
+        .project-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .project-card li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+        
+        .project-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .cta {
+            padding: 24px 0 72px;
+        }
+        
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 30px 32px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(124, 156, 255, 0.12), rgba(126, 240, 209, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        .cta-box h2 {
+            margin: 0 0 6px;
+            font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+            letter-spacing: -0.04em;
+        }
+        
+        .cta-box p {
+            margin: 0;
+            color: var(--muted);
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+            color: white;
+            box-shadow: 0 18px 35px rgba(90, 125, 255, 0.4);
+        }
+        
+        footer {
+            padding: 26px 0 72px;
+            color: var(--muted);
+        }
+        
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        @media (max-width: 860px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .cta-box,
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand" aria-label="Engima Digital home">
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    <span>Engima Digital</span>
+                </a>
+
+                <div class="nav-links" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+
+                <a href="index.html#contact" class="nav-cta">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="eyebrow">Selected work</span>
+                <h1>Building technology that solves real problems.</h1>
+                <p class="lead">
+                    Explore Enigma Digital's software development projects, intelligent systems, and digital solutions designed to help businesses work smarter and solve real-world challenges.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-visual">HOTEL SYSTEM</div>
+
+                        <div class="project-content">
+                            <span class="meta">Business Software</span>
+
+                            <h3>Hotel Management System</h3>
+
+                            <p>
+                                A project focused on simplifying hotel operations by organizing room bookings, tracking occupancy, monitoring revenue, and maintaining guest records.
+                            </p>
+
+                            <ul>
+                                <li>Room and booking management</li>
+                                <li>Revenue tracking</li>
+                                <li>Occupancy monitoring</li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-visual">HEALTHCARE</div>
+
+                        <div class="project-content">
+                            <span class="meta">Healthcare Technology</span>
+
+                            <h3>Healthcare Management System</h3>
+
+                            <p>
+                                A proposed digital system for helping healthcare facilities organize patient information and coordinate daily administrative activities.
+                            </p>
+
+                            <ul>
+                                <li>Patient record organization</li>
+                                <li>Appointment management</li>
+                                <li>Healthcare administration</li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-visual">AI ASSISTANT</div>
+
+                        <div class="project-content">
+                            <span class="meta">Artificial Intelligence</span>
+
+                            <h3>AI-Powered Assistant</h3>
+
+                            <p>
+                                An AI project concept exploring how conversational technology can help users access information and automate routine tasks.
+                            </p>
+
+                            <ul>
+                                <li>Conversational assistance</li>
+                                <li>Information retrieval</li>
+                                <li>Task automation</li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <div class="project-visual">BUSINESS SYSTEM</div>
+
+                        <div class="project-content">
+                            <span class="meta">Business Technology</span>
+
+                            <h3>Business Management System</h3>
+
+                            <p>
+                                A software project concept designed to help businesses organize records, manage operations, and access important business information more efficiently.
+                            </p>
+
+                            <ul>
+                                <li>Business records management</li>
+                                <li>Operational tracking</li>
+                                <li>Reports and monitoring</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-box">
+                    <div>
+                        <h2>Have a technology idea?</h2>
+                        <p>
+                            Let's work together to turn your idea into a practical digital solution.
+                        </p>
+                    </div>
+                    <a href="index.html#contact" class="button">Discuss Your Vision</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>Enigma Digital</strong>
+                <div>Projects shaped for progress.</div>
+            </div>
+            <a href="mailto:hello@enigmadigital.com" class="nav-cta">hello@enigmadigital.com</a>
+        </div>
+    </footer>
+</body>
+
+</html>

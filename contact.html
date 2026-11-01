@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Enigma Digital</title>
+    <meta name="description" content="Get in touch with Engima Digital to discuss your brand strategy, website project, or digital growth goals." />
+    <style>
+         :root {
+            --bg: #0b1020;
+            --bg-soft: #121b2d;
+            --card: #101827;
+            --text: #eef4ff;
+            --muted: #9bb0d1;
+            --primary: #7c9cff;
+            --primary-strong: #5a7dff;
+            --accent: #7ef0d1;
+            --shadow: rgba(9, 15, 29, 0.5);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, rgba(124, 156, 255, 0.18), transparent 24%), linear-gradient(135deg, var(--bg), #060b14 42%, #0a1427);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(9, 15, 29, 0.62);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 76px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .brand-mark {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            box-shadow: 0 0 18px rgba(126, 240, 209, 0.7);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        
+        .nav-cta {
+            padding: 12px 18px;
+            border: 1px solid rgba(124, 156, 255, 0.5);
+            background: rgba(124, 156, 255, 0.08);
+            border-radius: 999px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .hero {
+            padding: 82px 0 18px;
+        }
+        
+        .hero-inner {
+            max-width: 700px;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(124, 156, 255, 0.1);
+            border: 1px solid rgba(124, 156, 255, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            margin: 18px 0 20px;
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            line-height: 0.96;
+            letter-spacing: -0.06em;
+        }
+        
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+        
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 26px;
+            padding: 38px 0 72px;
+        }
+        
+        .info-panel,
+        .form-panel {
+            background: rgba(16, 24, 39, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 28px 24px;
+        }
+        
+        .info-panel h2,
+        .form-panel h2 {
+            margin: 0 0 18px;
+            font-size: 1.7rem;
+            letter-spacing: -0.04em;
+        }
+        
+        .info-panel p,
+        .info-list {
+            color: var(--muted);
+        }
+        
+        .info-list {
+            list-style: none;
+            margin: 22px 0 0;
+            padding: 0;
+        }
+        
+        .info-list li {
+            margin-bottom: 12px;
+        }
+        
+        .info-list strong {
+            color: var(--text);
+        }
+        
+        form {
+            display: grid;
+            gap: 18px;
+        }
+        
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        label {
+            display: grid;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(11, 16, 32, 0.9);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font: inherit;
+        }
+        
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: 2px solid rgba(124, 156, 255, 0.5);
+            border-color: rgba(124, 156, 255, 0.5);
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 26px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+            color: white;
+            box-shadow: 0 18px 35px rgba(90, 125, 255, 0.4);
+            cursor: pointer;
+        }
+        
+        footer {
+            padding: 26px 0 72px;
+            color: var(--muted);
+        }
+        
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        @media (max-width: 860px) {
+            .field-row,
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand" aria-label="Engima Digital home">
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    <span>Enigma Digital</span>
+                </a>
+
+                <div class="nav-links" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <a href="index.html#contact" class="nav-cta">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="eyebrow">Get in touch</span>
+                <h1>Let’s build something that stands out.</h1>
+                <p class="lead">
+                    Tell us what you’re building, what is changing, and where you want momentum to grow. We’ll help shape the right next step.
+                </p>
+            </div>
+        </section>
+
+        <section class="container contact-wrap">
+            <aside class="info-panel" aria-label="Contact information">
+                <h2>Start the conversation</h2>
+                <p>
+                    Whether you need a new digital presence, a smarter marketing story, or a clearer funnel, we’re ready to help you build momentum.
+                </p>
+
+                <ul class="info-list">
+                    <li>
+                        <strong>Email:</strong> brivian056@gmail.com.
+                    </li>
+
+                    <li>
+                        <strong>Phone:</strong> +254 793011126
+                    </li>
+
+                    <li>
+                        <strong>Location:</strong> Kenya
+                    </li>
+
+                    <li>
+                        <strong>Availability:</strong> Monday–Friday
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="form-panel">
+                <h2>Send a message</h2>
+                <form id="contactForm">
+                    <div class="field-row">
+                        <label>
+    First name
+    <input
+        type="text"
+        name="firstName"
+        placeholder="Your first name"
+        required
+    />
+</label>
+                        <label>
+    Last  name
+    <input
+        type="text"
+        name="lastName"
+        placeholder="Your last name"
+        required
+    />
+</label>
+                    </div>
+
+                    <label>
+              Email address
+              <input
+               type="email"
+              name="email"
+               placeholder="you@example.com"
+               required
+               />
+            </label>
+
+                    <label>
+              Project type
+              <input
+               type="text"
+              name="projectType"
+               placeholder="Brand strategy, website, campaign, etc." 
+               required
+               />
+            </label>
+
+                    <label>
+              Message
+              <textarea name="message" placeholder="Tell us about your goals, timeline, and what success looks like."></textarea>
+            </label>
+
+                    <button type="submit" class="button">Send Inquiry</button>
+
+                    <p id="formMessage" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>Engima Digital</strong>
+                <div>Strategy. Design. Growth.</div>
+            </div>
+            <a href="mailto:hello@enigmadigital.com" class="nav-cta">hello@enigmadigital.com</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

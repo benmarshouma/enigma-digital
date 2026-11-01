@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Engima Digital</title>
+    <meta name="description" content="Explore Engima Digital services including brand strategy, web experiences, and growth campaigns designed to help businesses outperform online." />
+    <style>
+         :root {
+            --bg: #0b1020;
+            --bg-soft: #121b2d;
+            --card: #101827;
+            --text: #eef4ff;
+            --muted: #9bb0d1;
+            --primary: #7c9cff;
+            --primary-strong: #5a7dff;
+            --accent: #7ef0d1;
+            --shadow: rgba(9, 15, 29, 0.5);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, rgba(124, 156, 255, 0.18), transparent 24%), linear-gradient(135deg, var(--bg), #060b14 42%, #0a1427);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(9, 15, 29, 0.62);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 76px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .brand-mark {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            box-shadow: 0 0 18px rgba(126, 240, 209, 0.7);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        
+        .nav-cta {
+            padding: 12px 18px;
+            border: 1px solid rgba(124, 156, 255, 0.5);
+            background: rgba(124, 156, 255, 0.08);
+            border-radius: 999px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .hero {
+            padding: 82px 0 18px;
+        }
+        
+        .hero-inner {
+            max-width: 760px;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(124, 156, 255, 0.1);
+            border: 1px solid rgba(124, 156, 255, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            margin: 18px 0 20px;
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 0.96;
+            letter-spacing: -0.06em;
+        }
+        
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+        
+        .services {
+            padding: 42px 0 68px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+        
+        .service-card {
+            background: rgba(16, 24, 39, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: 0 12px 30px rgba(7, 11, 18, 0.25);
+        }
+        
+        .icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(124, 156, 255, 0.18), rgba(126, 240, 209, 0.12));
+            color: var(--accent);
+            font-size: 1.35rem;
+            margin-bottom: 18px;
+        }
+        
+        .service-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+        }
+        
+        .service-card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+        }
+        
+        .service-card li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+        
+        .service-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .cta {
+            padding: 26px 0 70px;
+        }
+        
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 28px 32px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(124, 156, 255, 0.12), rgba(126, 240, 209, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        .cta-box h2 {
+            margin: 0 0 6px;
+            font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+            letter-spacing: -0.04em;
+        }
+        
+        .cta-box p {
+            margin: 0;
+            color: var(--muted);
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+            color: white;
+            box-shadow: 0 18px 35px rgba(90, 125, 255, 0.4);
+        }
+        
+        footer {
+            padding: 26px 0 72px;
+            color: var(--muted);
+        }
+        
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        @media (max-width: 860px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .cta-box,
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand" aria-label="Engima Digital home">
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    <span>Engima Digital</span>
+                </a>
+
+                <div class="nav-links" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+
+
+                <a href="contact.html" class="nav-cta">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="eyebrow">Our services</span>
+                <h1>Digital execution built for growth.</h1>
+                <p class="lead">
+                    We turn business goals into digital systems that communicate clearly, convert better, and keep your audience engaged from first click to loyal customer.
+                </p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+
+                <div class="service-grid">
+
+                    <!-- Service 1 -->
+                    <article class="service-card">
+                        <div class="icon">💻</div>
+                        <h3>Website Development</h3>
+                        <p>
+                            We build modern, responsive websites that help businesses establish their online presence and reach more customers.
+                        </p>
+                        <ul>
+                            <li>Business websites</li>
+                            <li>E-commerce websites</li>
+                            <li>Responsive web design</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 2 -->
+                    <article class="service-card">
+                        <div class="icon">⚙️</div>
+                        <h3>Custom Software Development</h3>
+                        <p>
+                            We develop software solutions designed to simplify operations, solve business problems, and improve productivity.
+                        </p>
+                        <ul>
+                            <li>Business management systems</li>
+                            <li>Database development</li>
+                            <li>Software automation</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 3 -->
+                    <article class="service-card">
+                        <div class="icon">🤖</div>
+                        <h3>AI & Automation</h3>
+                        <p>
+                            We explore intelligent technology to help businesses automate repetitive tasks and deliver better digital experiences.
+                        </p>
+                        <ul>
+                            <li>AI-powered chatbots</li>
+                            <li>Automated workflows</li>
+                            <li>Intelligent digital solutions</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 4 -->
+                    <article class="service-card">
+                        <div class="icon">🏥</div>
+                        <h3>Healthcare Systems</h3>
+                        <p>
+                            We aim to develop digital systems that help healthcare providers organize information and manage daily operations.
+                        </p>
+                        <ul>
+                            <li>Patient record management</li>
+                            <li>Appointment management</li>
+                            <li>Healthcare information systems</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 5 -->
+                    <article class="service-card">
+                        <div class="icon">📱</div>
+                        <h3>Mobile App Development</h3>
+                        <p>
+                            We design and develop mobile application solutions that help businesses connect with customers on their devices.
+                        </p>
+                        <ul>
+                            <li>Android applications</li>
+                            <li>Business applications</li>
+                            <li>Mobile-friendly experiences</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 6 -->
+                    <article class="service-card">
+                        <div class="icon">🛠️</div>
+                        <h3>IT Consultancy</h3>
+                        <p>
+                            We help individuals and businesses explore appropriate technologies for their digital transformation goals.
+                        </p>
+                        <ul>
+                            <li>Technology planning</li>
+                            <li>Software recommendations</li>
+                            <li>Digital transformation</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-box">
+                    <div>
+                        <h2>Need a digital partner that moves with purpose?</h2>
+                        <p>Let’s turn your next launch into a clearer, stronger, more profitable opportunity.</p>
+                    </div>
+                    <a href="index.html#contact" class="button">Schedule a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>Engima Digital</strong>
+                <div>Strategy. Design. Growth.</div>
+            </div>
+            <a href="mailto:hello@enigmadigital.
